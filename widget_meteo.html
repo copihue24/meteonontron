@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo à Nontron</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #meteo {
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        #meteo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #meteo h1 {
+            font-size: 2.5em;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .weather-current {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .current-weather {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wi {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .current-weather-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .forecast {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .forecast-day {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 0 5px;
+            width: 18%;
+        }
+
+        .forecast-day p {
+            margin: 5px 0;
+        }
+
+        #video {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        #video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .weather-details p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+
+        .temperature {
+            font-size: 3em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="meteo">
+            <h1>Nontron, Dordogne</h1>
+            <div class="weather-current">
+                <div class="current-weather">
+                    <i class="wi wi-day-cloudy"></i>
+                    <p>Partiellement nuageux</p>
+                </div>
+                <div class="weather-details">
+                    <p class="temperature">19.4°C</p>
+                    <div class="current-weather-info">
+                        <p>Vitesse du vent: 16 km/h</p>
+                        <p>Direction du vent: NNE</p>
+                        <p>7/3 04:05 Mise à jour</p>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="forecast-day">
+                    <p>Aujourd'hui</p>
+                    <i class="wi wi-day-cloudy"></i>
+                    <p>16.7°C - 30.3°C</p>
+                    <p>Passages nuageux</p>
+                </div>
+                <div class="forecast-day">
+                    <p>Vendredi</p>
+                    <i class="wi wi-day-cloudy"></i>
+                    <p>16.5°C - 31.9°C</p>
+                    <p>Passages nuageux</p>
+                </div>
+                <div class="forecast-day">
+                    <p>Samedi</p>
+                    <i class="wi wi-day-sunny"></i>
+                    <p>15.6°C - 32.4°C</p>
+                    <p>Ensoleillé</p>
+                </div>
+                <div class="forecast-day">
+                    <p>Dimanche</p>
+                    <i class="wi wi-rain"></i>
+                    <p>15.2°C - 23.7°C</p>
+                    <p>Averses</p>
+                </div>
+                <div class="forecast-day">
+                    <p>Lundi</p>
+                    <i class="wi wi-rain"></i>
+                    <p>12.0°C - 23.3°C</p>
+                    <p>Plutôt nuageux - averses</p>
+                </div>
+            </div>
+        </div>
+        <div id="video">
+            <video autoplay muted loop>
+                <source src="https://www.hotel-pelisson-nontron.com/files/2023/12/VideoEditor_20210830_121158.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+</html>
